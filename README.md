@@ -1,88 +1,123 @@
-QuickShelf 📋
-A fast and intuitive Python CLI clipboard/snippet manager that helps you organize and retrieve your copied text snippets.
+<h1>QuickShelf 📋</h1>
+<p><em>A fast and intuitive Python CLI clipboard/snippet manager that helps you organize and retrieve your copied text snippets.</em></p>
 
-Features
-🚀 Quick Storage: Automatically save clipboard content or manual input
-🔍 Smart Search: Find snippets by keyword in content or tags
-🏷️ Tagging System: Organize snippets with custom tags
-📊 Usage Tracking: Monitor access patterns and statistics
-💾 Local SQLite: All data stored locally in an SQLite database
-🎨 Rich Interface: Beautiful terminal UI with colored output
-Installation
-From Source
-Clone the repository:
-bash
-git clone https://github.com/yourusername/quickshelf.git
+<hr>
+
+<h2>✨ Features</h2>
+<ul>
+  <li>🚀 <b>Quick Storage</b> — Automatically save clipboard content or manual input</li>
+  <li>🔍 <b>Smart Search</b> — Find snippets by keyword in content or tags</li>
+  <li>🏷️ <b>Tagging System</b> — Organize snippets with custom tags</li>
+  <li>📊 <b>Usage Tracking</b> — Monitor access patterns and statistics</li>
+  <li>💾 <b>Local SQLite</b> — All data stored locally in an SQLite database</li>
+  <li>🎨 <b>Rich Interface</b> — Beautiful terminal UI with colored output</li>
+</ul>
+
+<hr>
+
+<h2>📦 Installation</h2>
+
+<h3>From Source</h3>
+<pre><code>git clone https://github.com/Subhayu004/quickshelf.git
 cd quickshelf
-Install dependencies:
-bash
 pip install -r requirements.txt
-Install the package:
-bash
 pip install -e .
-Quick Install
-bash
-pip install -r requirements.txt
+</code></pre>
+
+<h3>Quick Install</h3>
+<pre><code>pip install -r requirements.txt
 python -m quickshelf.main --help
-Usage
-Adding Snippets
-Add current clipboard content:
+</code></pre>
 
-bash
+<hr>
+
+<h2>🚀 Usage</h2>
+
+<h3>Adding Snippets</h3>
+<pre><code># Add current clipboard content
 quickshelf add
-Add specific text:
 
-bash
+# Add specific text
 quickshelf add "Your text here"
-Add with tags:
 
-bash
+# Add with tags
 quickshelf add "git clone https://github.com/user/repo.git" --tags "git,commands"
-Force use clipboard content:
 
-bash
+# Force use clipboard content
 quickshelf add --clipboard
-Listing Snippets
-List recent snippets:
+</code></pre>
 
-bash
+<h3>Listing Snippets</h3>
+<pre><code># List recent snippets
 quickshelf list
-Search for specific content:
 
-bash
+# Search for specific content
 quickshelf list --search "git"
-Limit number of results:
 
-bash
+# Limit number of results
 quickshelf list --limit 10
-Retrieving Snippets
-Get a snippet by ID:
+</code></pre>
 
-bash
+<h3>Retrieving Snippets</h3>
+<pre><code># Get a snippet by ID
 quickshelf get 5
-Get and copy to clipboard:
 
-bash
+# Get and copy to clipboard
 quickshelf get 5 --copy
-Statistics
-View database statistics:
+</code></pre>
 
-bash
+<h3>Statistics</h3>
+<pre><code># View database statistics
 quickshelf stats
-Database Location
-QuickShelf stores its SQLite database at:
+</code></pre>
 
-Linux/macOS: ~/.quickshelf/snippets.db
-Windows: %USERPROFILE%\.quickshelf\snippets.db
-Commands Reference
-Command	Description	Options
-add	Add a new snippet	--tags, --clipboard
-list	List snippets	--limit, --search
-get	Retrieve specific snippet	--copy
-stats	Show database statistics	-
-Examples
-bash
-# Add clipboard content with tags
+<hr>
+
+<h2>📂 Database Location</h2>
+<ul>
+  <li><b>Linux/macOS:</b> ~/.quickshelf/snippets.db</li>
+  <li><b>Windows:</b> %USERPROFILE%\.quickshelf\snippets.db</li>
+</ul>
+
+<hr>
+
+<h2>🧭 Commands Reference</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>add</code></td>
+      <td>Add a new snippet</td>
+      <td><code>--tags</code>, <code>--clipboard</code></td>
+    </tr>
+    <tr>
+      <td><code>list</code></td>
+      <td>List snippets</td>
+      <td><code>--limit</code>, <code>--search</code></td>
+    </tr>
+    <tr>
+      <td><code>get</code></td>
+      <td>Retrieve specific snippet</td>
+      <td><code>--copy</code></td>
+    </tr>
+    <tr>
+      <td><code>stats</code></td>
+      <td>Show database statistics</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<h2>💡 Examples</h2>
+<pre><code># Add clipboard content with tags
 quickshelf add --tags "python,snippet"
 
 # Search for Python-related snippets
@@ -93,33 +128,55 @@ quickshelf get 3 --copy
 
 # View your most used snippets
 quickshelf stats
-Requirements
-Python 3.8+
-typer
-pyperclip
-rich
-Development
-Project Structure
-quickshelf/
+</code></pre>
+
+<hr>
+
+<h2>🛠️ Requirements</h2>
+<ul>
+  <li>Python 3.8+</li>
+  <li><a href="https://typer.tiangolo.com/">typer</a></li>
+  <li><a href="https://pypi.org/project/pyperclip/">pyperclip</a></li>
+  <li><a href="https://github.com/Textualize/rich">rich</a></li>
+</ul>
+
+<hr>
+
+<h2>🧑‍💻 Development</h2>
+<h3>Project Structure</h3>
+<pre><code>quickshelf/
 ├── quickshelf/
 │   ├── __init__.py
 │   └── main.py          # Main CLI application
 ├── requirements.txt     # Python dependencies
-├── setup.py            # Package configuration
-└── README.md           # This file
-Contributing
-Fork the repository
-Create a feature branch
-Make your changes
-Add tests if applicable
-Submit a pull request
-License
-MIT License - see LICENSE file for details.
+├── setup.py             # Package configuration
+└── README.md            # This file
+</code></pre>
 
-Roadmap
- Import/export functionality
- Snippet categories beyond tags
- Advanced search with regex support
- Sync between devices
- GUI interface
- Plugin system for custom integrations
+<hr>
+
+<h2>🤝 Contributing</h2>
+<ol>
+  <li>Fork the repository</li>
+  <li>Create a feature branch</li>
+  <li>Make your changes</li>
+  <li>Add tests if applicable</li>
+  <li>Submit a pull request</li>
+</ol>
+
+<hr>
+
+<h2>📜 License</h2>
+<p>MIT License — see <a href="LICENSE">LICENSE</a> for details.</p>
+
+<hr>
+
+<h2>🗺️ Roadmap</h2>
+<ul>
+  <li>📥 Import/export functionality</li>
+  <li>🗂️ Snippet categories beyond tags</li>
+  <li>🔎 Advanced search with regex support</li>
+  <li>🔄 Sync between devices</li>
+  <li>🖥️ GUI interface</li>
+  <li>🧩 Plugin system for custom integrations</li>
+</ul>
